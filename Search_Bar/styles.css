@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.BlinkSearch {
+    background: #151515;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.BlinkSearch form {
+    background: #111;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 1px #272727;
+    display: inline-block;
+    font-size: 0px;
+    margin: 200px auto 0;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.BlinkSearch form input {
+    background: #111;
+    border-style: none;
+    background: #222;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 2px 0 #000;
+    color: #888;
+    display: block;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    text-shadow: 0 -1px 0 #000;
+    width: 250px;
+    line-height: 40px;
+}
+
+.BlinkSearch input::-webkit-input-placeholder{
+    color: #888;
+}
+
+.BlinkSearch input:focus{
+    outline: none;
+    animation: glow 800ms ease-out infinite alternate;
+    background: #222922;
+	box-shadow: 0 0 5px rgba(0,255,0,0.6), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	color: #efe;
+    transform: scaleX(1.02);
+}
+
+.BlinkSearch input:focus::-webkit-input-placeholder{
+    color: #efe;
+}
+
+.BlinkSearch input:focus:-moz-placeholder{
+    color: #efe;
+}
+
+.BlinkSearch form button {
+    background: #222;
+	box-sizing: border-box;
+    border-style: none;
+	border-radius: 0 5px 5px 0;
+	box-shadow: 0 2px 0 #000;
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: 'Poppins', sans-serif;;
+	font-size: 13px;
+	font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+    margin-left: 10px;
+	position: relative;
+	text-shadow: 0 -1px 0 #000;
+	width: 80px;
+}
+
+.BlinkSearch form button:hover,
+.BlinkSearch form button:focus {
+    background: #292929;
+    outline: none;
+    color: #5f5;
+}
