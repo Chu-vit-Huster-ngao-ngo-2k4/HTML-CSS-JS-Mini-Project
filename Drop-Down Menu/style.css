@@ -1,0 +1,157 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+html {
+    background-color: #141010;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #555555;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.hlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    width: 500px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    border-radius: 20px;
+}
+
+.des{
+    font-size: 1.4em;
+    text-align: center;
+}
+
+
+.menu {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-title {
+    background-color: #8db842;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    transition: 0.3s background-color;
+    position: relative;
+}
+
+.menu-title::before {
+    content: '';
+    display: block;
+    height: 0;
+    border-top: 15px solid #8db842;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 0 solid #dddddd;
+    border-top-width: 0;
+    position: absolute;
+    top: 90%;
+    z-index: 101;
+    transition: 0.3s 0.3s border-top ease-out, 0.3s border-top-color;
+}
+
+
+.menu:hover .menu-title::before {
+        border-top-width: 15px;
+        border-top-color: #6d42b8;
+}
+    
+
+.menu-title:hover::before {
+       border-top-color: inherit; /* Kế thừa từ thẻ cha */
+}
+
+li:hover .menu-title,
+.menu-dropdown li:hover ~ .menu-title::before {
+    background: #6d42b8; /* Hiệu ứng hover cho menu */
+    scale: 1.05;
+    transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color, 0.2s background-color;
+}
+
+.menu-dropdown {
+    min-width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+    position: absolute;
+    color: #000000;
+    font-size: 16px;
+    z-index: 100;
+    left: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 15px ;
+    transition: 0.5s padding, 0.5s background;
+    visibility: hidden;
+  }
+
+.menu-dropdown > * {
+    overflow: hidden;
+    height: 30px;
+    padding: 10px 10px;
+    background: rgba(255, 255, 255);
+    font-size: 16px;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    margin-bottom:5px ;
+    margin-top: 5px;
+    border-radius: 50%;
+    white-space: nowrap;
+    transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color, 0.2s background-color;
+  }
+
+
+  .menu:not(:hover) > .menu-dropdown {
+    padding: 4px 4px;
+    background: #ffffff;
+    z-index: 99;
+  }
+
+
+.menu:hover .menu-dropdown,
+.menu-dropdown:hover {
+    visibility: visible;
+    transition: 0.5s padding, 0.5s background;
+    transform: translateY(-10px); /* Dịch dropdown lên một chút */
+}
+
+.menu-dropdown li:hover {
+    background: #6d42b8;
+    color: #ffffff;
+    position: relative;
+    left: 5px;
+    transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color, 0.2s background-color;
+}
+
