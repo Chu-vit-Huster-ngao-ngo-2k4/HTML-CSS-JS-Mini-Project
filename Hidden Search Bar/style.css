@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+}
+
+.container {
+    display: flex;
+}
+
+form {
+    display: flex;
+}
+form .search,
+form .submit{
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+}
+
+form .search{
+    width: 0;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: width 0.6s ease-in-out;
+}
+
+form .submit{
+    background-color: #f1c40f;
+    width: 45px;
+    height: 45px;
+    margin-left: 20px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out;
+}
+
+form .submit:hover{
+    background-color: #12c2f3;
+    transition: background-color 0.6s ease-in-out;
+}
+
+form .search.show-search{
+    opacity: 1;
+    visibility: visible;
+    width: 250px; /* Cần thêm width để input hiển thị */
+    transition: all 0.33s ease-in-out;
+}
+
+.search:focus{
+    outline: none;
+}
+
